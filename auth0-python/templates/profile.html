@@ -1,0 +1,30 @@
+<h2>Editar datos</h2>
+
+<h3>Usuario: {{ user.name }}</h3>
+<p>Email: {{ user.email }}</p>
+
+<form method="POST" action="/update">
+
+  <label>Tipo de documento:</label><br>
+  <input type="text" name="tipo_doc"
+    value="{{ user.get('user_metadata', {}).get('tipo_doc', '') }}">
+  <br><br>
+
+  <label>Número de documento:</label><br>
+  <input type="text" name="num_doc"
+    value="{{ user.get('user_metadata', {}).get('num_doc', '') }}">
+  <br><br>
+
+  <label>Dirección:</label><br>
+  <input type="text" name="direccion"
+    value="{{ user.get('user_metadata', {}).get('direccion', '') }}">
+  <br><br>
+
+  <label>Teléfono:</label><br>
+  <input type="text" name="telefono"
+    value="{{ user.get('user_metadata', {}).get('telefono', '') }}">
+  <br><br>
+
+  <button type="submit">Guardar</button>
+
+</form>
